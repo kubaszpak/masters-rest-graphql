@@ -1,0 +1,15 @@
+config:
+  target: 'http://localhost:4000'  # Replace with your server URL
+  phases:
+    - duration: 60  # Test duration in seconds
+      arrivalRate: 10  # Number of new virtual users per second
+
+scenarios:
+  - flow:
+      - post:
+          url: "/"
+          json:
+            query: |
+              query {
+                hello
+              }
