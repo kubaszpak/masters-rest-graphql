@@ -1,0 +1,14 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 30
+      arrivalRate: 10
+  # processor: "./artillery.cjs"
+scenarios:
+  - flow:
+      - get:
+          url: "/categories/1"
+          # beforeRequest: "beforeRequest"
+      - get:
+          url: "/categories/1/products"
+          # beforeRequest: "beforeRequest"

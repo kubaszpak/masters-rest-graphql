@@ -1,9 +1,28 @@
 import express, { Request, Response } from "express";
 import { prisma } from "../prisma";
 
-const ordersRouter = express.Router();
+const router = express.Router();
 
-ordersRouter.get("/:id", async (req: Request, res: Response) => {
+router.get("/", async (req: Request, res: Response) => {
+  const userId = req.query.userId
+    ? parseInt(req.query.userId as string)
+    : undefined;
+
+  const orders = await prisma.orders.findMany({
+    where: userId ? { user_id: userId } : undefined,
+    include: {
+      order_items: {
+        include: {
+          products: true,
+        },
+      },
+    },
+  });
+
+  res.json(orders);
+});
+
+router.get("/:id", async (req: Request, res: Response) => {
   const orderId = parseInt(req.params.id, 10);
 
   try {
@@ -37,4 +56,4 @@ ordersRouter.get("/:id", async (req: Request, res: Response) => {
   }
 });
 
-export default ordersRouter;
+export default router;
