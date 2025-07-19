@@ -2,6 +2,11 @@
 
 This project compares two popular API architectures — **REST** and **GraphQL** — in the context of a typical e-commerce backend. Both APIs were implemented over a shared PostgreSQL database using Prisma ORM to ensure identical data models and SQL queries.
 
+## Master's Thesis
+
+This repository served as the foundation for my master's thesis.
+You can find the full thesis with results and conclusions [here](./Praca_magisterska%20-%2007.07.2025%20-%20Jakub%20Szpak.pdf).
+
 ## Test Scenarios
 
 Four realistic performance tests were conducted:
