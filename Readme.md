@@ -52,5 +52,5 @@ The project also analyzes developer experience when implementing both APIs, cons
 - Create a .env file with DATABASE_URL connection string: `DATABASE_URL="postgresql://your_user:your_password@your_host:5432/your_database"`. Replace your_user, your_password, etc. with your actual database credentials. This should match your Supabase connection string or local PostgreSQL setup.
 - Run `npx prisma db push` to generate prisma files and set up the database tables without running SQL migrations.
 - Seed the database with dummy data.
-- Run `npm run devz to start the project!
+- Run `npm run dev` to start the project!
  
